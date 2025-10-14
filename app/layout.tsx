@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Acelera Vendas',
+  description: 'Encontro de Empresários - Acelera Vendas 2026. Conheça o método que levou empresas a gerarem mais de 1 bilhão em aumento de receita.',
   generator: 'v0.app',
 }
 
