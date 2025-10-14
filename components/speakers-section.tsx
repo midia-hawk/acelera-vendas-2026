@@ -3,7 +3,6 @@
 import { Card } from "@/components/ui/card"
 import { Lightbulb, Target } from "lucide-react"
 import { useInView } from "@/hooks/use-in-view"
-import Image from "next/image"
 
 export function SpeakersSection() {
   const { ref, isInView } = useInView()
@@ -58,11 +57,9 @@ export function SpeakersSection() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="mb-6">
-                <Image
+                <img
                   src={speaker.image || "/placeholder.svg"}
                   alt={speaker.name}
-                  width={400}
-                  height={400}
                   className="w-full h-64 object-cover object-[50%_20%] rounded-xl"
                 />
               </div>
