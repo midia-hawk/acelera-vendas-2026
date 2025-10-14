@@ -2,8 +2,9 @@
 
 import { Card } from "@/components/ui/card"
 import { Coffee, Users, TrendingUp } from "lucide-react"
-import Image from "next/image"
 import { useInView } from "@/hooks/use-in-view"
+
+const basePath = process.env.NODE_ENV === 'production' ? '/acelera-vendas-2026' : ''
 
 export function AboutSection() {
   const { ref, isInView } = useInView()
@@ -24,12 +25,10 @@ export function AboutSection() {
           <div
             className={`transition-all duration-700 delay-100 ${isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
           >
-            <Image
-              src="/business-meeting-with-entrepreneurs-discussing-sal.jpg"
+            <img
+              src={`${basePath}/business-meeting-with-entrepreneurs-discussing-sal.jpg`}
               alt="Evento Acelera Vendas"
-              width={600}
-              height={500}
-              className="rounded-2xl shadow-2xl"
+              className="rounded-2xl shadow-2xl w-full"
             />
           </div>
 

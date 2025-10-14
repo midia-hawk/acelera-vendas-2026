@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/acelera-vendas-2026',
+  basePath: process.env.NODE_ENV === 'production' ? '/acelera-vendas-2026' : '',
   eslint: {
     ignoreDuringBuilds: true,
   },

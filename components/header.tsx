@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import Image from "next/image"
+
+const basePath = process.env.NODE_ENV === 'production' ? '/acelera-vendas-2026' : ''
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,23 +36,16 @@ export function Header() {
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
             <div className="h-20 w-auto relative">
-              <Image
-                src="/images/logo-hawk.png"
+              <img
+                src={`${basePath}/images/logo-hawk.png`}
                 alt="Hawk Logo"
-                width={240}
-                height={80}
-                className={`h-20 w-auto transition-all duration-300 ${isScrolled ? "filter-none" : "invert brightness-0"}`}
+                className={`h-20 w-auto transition-all duration-300 absolute top-0 left-0 ${isScrolled ? "opacity-0" : "invert brightness-0 opacity-100"}`}
               />
-              {/* When scrolled replace with black logo for best contrast */}
-              {isScrolled && (
-                <Image
-                  src="/images/logo-hawk-black.png"
-                  alt="Hawk Logo Black"
-                  width={240}
-                  height={80}
-                  className="h-20 w-auto absolute top-0 left-0"
-                />
-              )}
+              <img
+                src={`${basePath}/images/logo-hawk-black.png`}
+                alt="Hawk Logo"
+                className={`h-20 w-auto transition-all duration-300 ${isScrolled ? "opacity-100" : "opacity-0"}`}
+              />
             </div>
           </div>
 
