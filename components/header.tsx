@@ -34,7 +34,7 @@ export function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection("hero")}>
             <div className="h-20 w-auto relative">
               <img
                 src={`${basePath}/images/logo-hawk.png`}
@@ -53,7 +53,7 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("sobre")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors cursor-pointer ${
                 isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-primary"
               }`}
             >
@@ -61,7 +61,7 @@ export function Header() {
             </button>
             <button
               onClick={() => scrollToSection("palestrantes")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors cursor-pointer ${
                 isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-primary"
               }`}
             >
@@ -69,7 +69,7 @@ export function Header() {
             </button>
             <button
               onClick={() => scrollToSection("programacao")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors cursor-pointer ${
                 isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-primary"
               }`}
             >
@@ -77,7 +77,7 @@ export function Header() {
             </button>
             <button
               onClick={() => scrollToSection("beneficios")}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors cursor-pointer ${
                 isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-primary"
               }`}
             >
@@ -89,7 +89,7 @@ export function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className={`md:hidden cursor-pointer ${isScrolled ? "text-foreground" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} /> : <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />}
           </button>
         </div>
@@ -100,7 +100,7 @@ export function Header() {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("sobre")}
-                className={`text-sm font-medium transition-colors text-left ${
+                className={`text-sm font-medium transition-colors text-left cursor-pointer ${
                   isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/90"
                 }`}
               >
@@ -108,7 +108,7 @@ export function Header() {
               </button>
               <button
                 onClick={() => scrollToSection("palestrantes")}
-                className={`text-sm font-medium transition-colors text-left ${
+                className={`text-sm font-medium transition-colors text-left cursor-pointer ${
                   isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/90"
                 }`}
               >
@@ -116,7 +116,7 @@ export function Header() {
               </button>
               <button
                 onClick={() => scrollToSection("programacao")}
-                className={`text-sm font-medium transition-colors text-left ${
+                className={`text-sm font-medium transition-colors text-left cursor-pointer ${
                   isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/90"
                 }`}
               >
@@ -124,7 +124,7 @@ export function Header() {
               </button>
               <button
                 onClick={() => scrollToSection("beneficios")}
-                className={`text-sm font-medium transition-colors text-left ${
+                className={`text-sm font-medium transition-colors text-left cursor-pointer ${
                   isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/90"
                 }`}
               >

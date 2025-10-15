@@ -284,7 +284,7 @@ export function RegistrationForm() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full h-14 bg-primary hover:bg-primary/90 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-full h-14 bg-primary hover:bg-primary/90 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
                 >
                   {isLoading ? "Processando..." : "Confirmar Inscrição Gratuita"}
                 </Button>

@@ -9,9 +9,9 @@ export function Footer() {
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Marca%20Hawk%20-%20Azul-04%20%281%29-DgfjbeywOB5bk5VVxkzLLECOV0raaM.png"
               alt="Hawk Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto brightness-0 invert"
+              width={240}
+              height={80}
+              className="h-20 w-auto brightness-0 invert"
             />
           </div>
 

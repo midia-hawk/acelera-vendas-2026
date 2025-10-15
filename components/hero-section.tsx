@@ -34,7 +34,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            ⚡ EVENTO PRESENCIAL GRATUITO
+            EVENTO PRESENCIAL GRATUITO
           </div>
 
           {/* Main Heading */}
@@ -66,11 +66,11 @@ export function HeroSection() {
           >
             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
               <MapPin className="h-5 w-5" />
-              <span className="text-sm">Zone Sul Hall - Uberaba/MG</span>
+              <span className="text-sm">Zona Sul Hall - Uberlândia/MG</span>
             </div>
             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
               <Calendar className="h-5 w-5" />
-              <span className="text-sm">08 de Novembro | 8h às 10h</span>
+              <span className="text-sm">06 de Agosto | 8h às 10h</span>
             </div>
             <div className="flex items-center gap-2 text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
               <Users className="h-5 w-5" />
@@ -84,22 +84,22 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <Button asChild size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105">
+            <Button asChild size="lg" className="bg-white hover:bg-gray-100 text-primary font-bold text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 cursor-pointer">
               <a href="#inscricao">
                 Garantir Minha Vaga Gratuita
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
-            <p className="text-white/80 text-sm mt-4">⚠️ VAGAS LIMITADAS - Exclusivo para empresários de Uberaba</p>
+            <p className="text-white/80 text-sm mt-4 pb-4">⚠️ VAGAS LIMITADAS - Exclusivo para empresários de Uberlândia</p>
           </div>
         </div>
       </div>
 
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
           <path
-            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+            d="M0 60L60 52.5C120 45 240 30 360 22.5C480 15 600 15 720 18.75C840 22.5 960 30 1080 33.75C1200 37.5 1320 37.5 1380 37.5L1440 37.5V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z"
             fill="white"
           />
         </svg>

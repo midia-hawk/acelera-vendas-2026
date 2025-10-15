@@ -43,14 +43,14 @@ export function CTASection() {
           <Button
             size="lg"
             onClick={scrollToForm}
-            className="bg-white hover:bg-gray-100 text-primary font-bold text-lg px-10 py-7 rounded-xl shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-110"
+            className="bg-white hover:bg-gray-100 text-primary font-bold text-lg px-10 py-7 rounded-xl shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-110 cursor-pointer"
           >
             Quero Garantir Minha Vaga Gratuita
             <ArrowRight className="ml-2 h-6 w-6" />
           </Button>
 
           <p className="text-white/70 text-sm mt-6">
-            ⏰ Vagas limitadas • 📍 Zone Sul Hall, Uberaba/MG • 📅 08 de Novembro
+            ⏰ Vagas limitadas • 📍 Av. Nicomedes Alves dos Santos, 3600 - Loja 2 - Morada da Colina, Uberlândia - MG • 📅 06 de Agosto
           </p>
         </div>
       </div>

@@ -27,8 +27,8 @@ export function BenefitsSection() {
       icon: Users2,
       title: "Networking Exclusivo",
       description:
-        "Conecte-se com outros empresários de Uberaba e região. Troque experiências e crie parcerias focadas em crescimento.",
-      color: "bg-secondary",
+        "Conecte-se com outros empresários de Uberlândia e região. Troque experiências e crie parcerias focadas em crescimento.",
+      color: "bg-primary",
       iconColor: "text-white",
     },
   ]

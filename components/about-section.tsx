@@ -37,7 +37,7 @@ export function AboutSection() {
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               <span className="font-bold text-foreground">Encontro com Empresários + Acelera Vendas 2026</span> é um
-              encontro presencial voltado para empresários e empreendedores de Uberaba e região que querem acelerar suas
+              encontro presencial voltado para empresários e empreendedores de Uberlândia e região que querem acelerar suas
               vendas em 2026, qualificar melhor seus leads e estruturar um funil de marketing e vendas previsível e
               lucrativo.
             </p>
