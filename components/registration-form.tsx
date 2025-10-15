@@ -17,12 +17,35 @@ export function RegistrationForm() {
     email: "",
     phone: "",
     company: "",
+    instagram: "",
+    revenue: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [emailError, setEmailError] = useState("")
+  const [phoneError, setPhoneError] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Validate corporate email
+    const personalEmailDomains = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'uol.com.br', 'bol.com.br', 'live.com', 'icloud.com']
+    const emailDomain = formData.email.split('@')[1]?.toLowerCase()
+    
+    if (personalEmailDomains.includes(emailDomain)) {
+      setEmailError('Por favor, utilize um e-mail corporativo. E-mails pessoais não são permitidos.')
+      return
+    }
+    
+    // Validate phone number (must have 10 or 11 digits)
+    const phoneDigits = formData.phone.replace(/\D/g, "")
+    if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+      setPhoneError('Telefone inválido. Digite um número com DDD (10 ou 11 dígitos).')
+      return
+    }
+    
+    setEmailError('')
+    setPhoneError('')
     setIsLoading(true)
     try {
       // Capture UTM parameters from URL
@@ -58,7 +81,7 @@ export function RegistrationForm() {
       // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false)
-        setFormData({ name: "", email: "", phone: "", company: "" })
+        setFormData({ name: "", email: "", phone: "", company: "", instagram: "", revenue: "" })
       }, 3000)
     } catch (err) {
       console.error("Error submitting form:", err)
@@ -74,6 +97,10 @@ export function RegistrationForm() {
       ...formData,
       [e.target.name]: e.target.value,
     })
+    // Clear email error when user types
+    if (e.target.name === 'email') {
+      setEmailError('')
+    }
   }
 
   const formatPhone = (digits: string) => {
@@ -112,6 +139,8 @@ export function RegistrationForm() {
       ...formData,
       phone: formatted,
     })
+    // Clear phone error when user types
+    setPhoneError('')
   }
 
   return (
@@ -161,7 +190,7 @@ export function RegistrationForm() {
 
                 <div>
                   <Label htmlFor="email" className="text-gray-900 font-semibold">
-                    E-mail *
+                    E-mail Corporativo *
                   </Label>
                   <Input
                     id="email"
@@ -170,9 +199,14 @@ export function RegistrationForm() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-2 h-12 border-gray-300 focus:border-primary"
-                    placeholder="seu@email.com"
+                    className={`mt-2 h-12 border-gray-300 focus:border-primary ${emailError ? 'border-red-500 focus:border-red-500' : ''}`}
+                    placeholder="seu@empresa.com"
                   />
+                  {emailError && (
+                    <p className="mt-2 text-sm text-red-600 font-medium">
+                      {emailError}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -186,24 +220,65 @@ export function RegistrationForm() {
                     required
                     value={formData.phone}
                     onChange={handlePhoneChange}
-                    className="mt-2 h-12 border-gray-300 focus:border-primary"
+                    className={`mt-2 h-12 border-gray-300 focus:border-primary ${phoneError ? 'border-red-500 focus:border-red-500' : ''}`}
                     placeholder="(00) 00000-0000"
                   />
+                  {phoneError && (
+                    <p className="mt-2 text-sm text-red-600 font-medium">
+                      {phoneError}
+                    </p>
+                  )}
                 </div>
 
                 <div>
                   <Label htmlFor="company" className="text-gray-900 font-semibold">
-                    Empresa
+                    Nome da Empresa *
                   </Label>
                   <Input
                     id="company"
                     name="company"
                     type="text"
+                    required
                     value={formData.company}
                     onChange={handleChange}
                     className="mt-2 h-12 border-gray-300 focus:border-primary"
-                    placeholder="Nome da sua empresa (opcional)"
+                    placeholder="Nome da sua empresa"
                   />
+                </div>
+
+                <div>
+                  <Label htmlFor="instagram" className="text-gray-900 font-semibold">
+                    Seu Instagram @
+                  </Label>
+                  <Input
+                    id="instagram"
+                    name="instagram"
+                    type="text"
+                    value={formData.instagram}
+                    onChange={handleChange}
+                    className="mt-2 h-12 border-gray-300 focus:border-primary"
+                    placeholder="@seuperfil"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="revenue" className="text-gray-900 font-semibold">
+                    Fatura quanto: *
+                  </Label>
+                  <select
+                    id="revenue"
+                    name="revenue"
+                    required
+                    value={formData.revenue}
+                    onChange={(e) => setFormData({ ...formData, revenue: e.target.value })}
+                    className="mt-2 h-12 w-full rounded-md border border-gray-300 bg-background px-3 py-2 text-sm ring-offset-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >
+                    <option value="">Selecione uma opção</option>
+                    <option value="Até R$50 mil/mês">Até R$50 mil/mês</option>
+                    <option value="De R$50 a R$100 mil/mês">De R$50 a R$100 mil/mês</option>
+                    <option value="De R$100 a R$200 mil/mês">De R$100 a R$200 mil/mês</option>
+                    <option value="Mais de R$200 mil/mês">Mais de R$200 mil/mês</option>
+                  </select>
                 </div>
 
                 <Button
