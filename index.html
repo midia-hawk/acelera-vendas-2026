@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acelera Vendas 2026 - Hawk</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header transparent" id="header">
         <div class="container">
             <div class="header-content">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Marca%20Hawk%20-%20Azul-04%20%281%29-DgfjbeywOB5bk5VVxkzLLECOV0raaM.png" alt="Hawk Logo" class="logo">
+                <div class="logo-wrap">
+                    <img src="public/images/logo-hawk.png" alt="Hawk Logo" class="logo">
+                </div>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <nav class="nav" id="nav">
-                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#sobre" class="nav-link">Sobre o Evento</a>
                     <a href="#palestrantes" class="nav-link">Palestrantes</a>
                     <a href="#programacao" class="nav-link">Programação</a>
-                    <a href="#inscricao" class="nav-link">Inscrição</a>
+                    <a href="#beneficios" class="nav-link">Benefícios</a>
+                    <a href="#inscricao" class="btn btn-ghost small">Garantir Vaga</a>
                 </nav>
             </div>
         </div>
@@ -32,63 +36,65 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Acelera Vendas 2026</h1>
-                <p class="hero-subtitle">Transforme suas vendas e alcance resultados extraordinários em 2026</p>
-                <div class="hero-info">
-                    <div class="info-item">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <span>15-17 de Março, 2026</span>
-                    </div>
-                    <div class="info-item">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span>São Paulo, SP</span>
-                    </div>
+                <div class="hero-badge">EVENTO PRESENCIAL, GRATUITO</div>
+                <h1 class="hero-title">
+                    Encontro de Empresários<br>
+                    Acelera Vendas 2026
+                </h1>
+                <p class="hero-subtitle">Conheça o método que levou empresas a gerarem mais de 1 bilhão em aumento de receita</p>
+                <div class="hero-chips">
+                    <span class="chip"><i class="ri-calendar-2-line"></i>Dia 06 de Agosto às 19h</span>
+                    <span class="chip"><i class="ri-map-pin-line"></i>Uberlândia/MG</span>
+                    <span class="chip"><i class="ri-rocket-line"></i>Café da Manhã + Conteúdo + Networking</span>
                 </div>
                 <div class="hero-buttons">
-                    <a href="#inscricao" class="btn btn-primary">Inscreva-se Agora</a>
-                    <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+                    <a href="#inscricao" class="btn btn-white btn-lg">Garantir Minha Vaga Gratuita</a>
                 </div>
+                <p class="hero-note">VAGAS LIMITADAS — evento com vagas limitadas</p>
             </div>
+        </div>
+        <div class="hero-wave-bottom" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 60L60 52.5C120 45 240 30 360 22.5C480 15 600 15 720 18.75C840 22.5 960 30 1080 33.75C1200 37.5 1320 37.5 1380 37.5L1440 37.5V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z" fill="#f5f7fb"/>
+            </svg>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="section" id="sobre">
         <div class="container">
-            <h2 class="section-title">Sobre o Evento</h2>
+            <h2 class="section-title has-underline">Sobre o Evento</h2>
             <div class="about-grid">
+                <div class="about-image">
+                    <img src="public/business-meeting-with-entrepreneurs-discussing-sal.jpg" alt="Empresários em reunião">
+                </div>
                 <div class="about-content">
                     <p class="about-text">
-                        O <strong>Acelera Vendas 2026</strong> é o maior evento de vendas do ano, reunindo os melhores profissionais e estratégias para impulsionar seus resultados.
+                        <strong>Encontro com Empresários + Acelera Vendas 2026</strong> é um encontro presencial voltado para empresários e empreendedores de Uberlândia e região que querem acelerar suas vendas em 2026, qualificar melhor seus leads e estruturar um funil de marketing e vendas previsível e lucrativo.
                     </p>
                     <p class="about-text">
-                        Durante três dias intensos, você terá acesso a palestras exclusivas, workshops práticos e networking com líderes do mercado.
+                        Serão <span class="text-accent">2 horas de conteúdo e networking</span>, com conteúdo direto e aplicável. Conduzido por quem fez isso em dezenas de empresas de sucesso.
                     </p>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Participantes</div>
+                    <div class="features-grid">
+                        <div class="feature-tile">
+                            <div class="feature-icon-lg"><i class="ri-cup-line"></i></div>
+                            <div class="feature-text">
+                                <h5>Café da Manhã</h5>
+                            </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Palestrantes</div>
+                        <div class="feature-tile">
+                            <div class="feature-icon-lg"><i class="ri-line-chart-line"></i></div>
+                            <div class="feature-text">
+                                <h5>Conteúdo Premium</h5>
+                            </div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Dias de Evento</div>
+                        <div class="feature-tile">
+                            <div class="feature-icon-lg"><i class="ri-team-line"></i></div>
+                            <div class="feature-text">
+                                <h5>Networking</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="/placeholder.svg?height=400&width=600" alt="Evento Acelera Vendas">
                 </div>
             </div>
         </div>
@@ -97,27 +103,43 @@
     <!-- Speakers Section -->
     <section class="section section-gray" id="palestrantes">
         <div class="container">
-            <h2 class="section-title section-title-dark">Palestrantes</h2>
+            <h2 class="section-title section-title-dark has-underline">Palestrantes</h2>
             <p class="section-subtitle section-subtitle-dark">Conheça os especialistas que vão compartilhar suas estratégias de sucesso</p>
             <div class="speakers-grid">
                 <div class="speaker-card">
                     <div class="speaker-image">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Retratos%20Rhulian%20%20%2816%29-fygdbY11LINC7GLrZbux7bsBTzGXiM.jpg" alt="Rhulian - Especialista em Vendas">
+                        <img src="public/images/speaker-rhulian.jpg" alt="Rhulian Marcus - Especialista em Vendas">
                     </div>
                     <div class="speaker-info">
-                        <h3 class="speaker-name">Rhulian Santos</h3>
-                        <p class="speaker-role">Especialista em Vendas Digitais</p>
-                        <p class="speaker-bio">Mais de 15 anos de experiência em vendas B2B e estratégias de crescimento acelerado.</p>
+                        <div class="speaker-header">
+                            <div class="speaker-icon">
+                                <i class="ri-focus-3-line"></i>
+                            </div>
+                            <div class="speaker-title">
+                                <h3 class="speaker-name">Rhulian Marcus</h3>
+                                <p class="speaker-role">CEO da Hawk Marketing</p>
+                                <p class="speaker-subtitle">Especialista em Growth e Vendas B2B</p>
+                            </div>
+                        </div>
+                        <p class="speaker-bio">Vai revelar como construir um funil previsível, medir os indicadores certos e gerar mais vendas com menos desperdício de leads.</p>
                     </div>
                 </div>
                 <div class="speaker-card">
                     <div class="speaker-image">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_o9o2x7o9o2x7o9o2-Q6fFSyWVoZNy5NRcduQwrK8gv6EtDh.png" alt="Especialista em Marketing">
+                        <img src="public/images/speaker-mariana.png" alt="Larah Manoukian - Marketing e Relacionamento">
                     </div>
                     <div class="speaker-info">
-                        <h3 class="speaker-name">Mariana Costa</h3>
-                        <p class="speaker-role">Diretora de Marketing</p>
-                        <p class="speaker-bio">Especialista em estratégias de conversão e funil de vendas com resultados comprovados.</p>
+                        <div class="speaker-header">
+                            <div class="speaker-icon">
+                                <i class="ri-lightbulb-line"></i>
+                            </div>
+                            <div class="speaker-title">
+                                <h3 class="speaker-name">Larah Manoukian</h3>
+                                <p class="speaker-role">Mentora e Idealizadora</p>
+                                <p class="speaker-subtitle">Delas Academy</p>
+                            </div>
+                        </div>
+                        <p class="speaker-bio">Vai mostrar como o empresário pode se posicionar como influenciador do próprio negócio, fortalecendo marca, autoridade e conexão com o público.</p>
                     </div>
                 </div>
             </div>
@@ -127,169 +149,82 @@
     <!-- Program Section -->
     <section class="section" id="programacao">
         <div class="container">
-            <h2 class="section-title">Programação</h2>
-            <div class="program-grid">
-                <div class="program-day">
-                    <div class="day-header">
-                        <h3 class="day-title">Dia 1 - 15/03</h3>
-                        <p class="day-subtitle">Fundamentos de Vendas</p>
+            <h2 class="section-title has-underline">Programação Completa</h2>
+            <p class="section-subtitle">2 horas de conteúdo estratégico para transformar suas vendas em 2026</p>
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <div class="bubble">1</div>
+                    <div class="timeline-content">
+                        <h4>Abertura – O Novo Jogo das Vendas em 2026</h4>
+                        <ul class="timeline-list">
+                            <li><i class="ri-checkbox-circle-line"></i>O cenário digital e o novo comportamento do consumidor</li>
+                            <li><i class="ri-checkbox-circle-line"></i>Tendências de marketing e vendas para o próximo ano</li>
+                        </ul>
                     </div>
-                    <div class="schedule">
-                        <div class="schedule-item">
-                            <span class="schedule-time">09:00</span>
-                            <span class="schedule-event">Abertura e Boas-vindas</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">10:00</span>
-                            <span class="schedule-event">Tendências de Vendas 2026</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">14:00</span>
-                            <span class="schedule-event">Workshop: Prospecção Eficaz</span>
-                        </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="bubble">2</div>
+                    <div class="timeline-content">
+                        <h4>Posicionamento e Autoridade Digital</h4>
+                        <ul class="timeline-list">
+                            <li><i class="ri-checkbox-circle-line"></i>Por que o empresário precisa ser visto na marca</li>
+                            <li><i class="ri-checkbox-circle-line"></i>Como gerar influência e confiança no digital</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-day">
-                    <div class="day-header">
-                        <h3 class="day-title">Dia 2 - 16/03</h3>
-                        <p class="day-subtitle">Estratégias Avançadas</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="bubble">3</div>
+                    <div class="timeline-content">
+                        <h4>Funil de Marketing e Vendas Inteligente</h4>
+                        <ul class="timeline-list">
+                            <li><i class="ri-checkbox-circle-line"></i>Estruturando um funil previsível e escalável</li>
+                            <li><i class="ri-checkbox-circle-line"></i>Principais KPIs e como definir metas que fazem sentido</li>
+                            <li><i class="ri-checkbox-circle-line"></i>Como atrair marketing e vendas para escalar resultados</li>
+                        </ul>
                     </div>
-                    <div class="schedule">
-                        <div class="schedule-item">
-                            <span class="schedule-time">09:00</span>
-                            <span class="schedule-event">Vendas Consultivas</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">11:00</span>
-                            <span class="schedule-event">Negociação de Alto Impacto</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">14:00</span>
-                            <span class="schedule-event">Cases de Sucesso</span>
-                        </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="bubble">4</div>
+                    <div class="timeline-content">
+                        <h4>Qualificação de Leads e Playbook Comercial</h4>
+                        <ul class="timeline-list">
+                            <li><i class="ri-checkbox-circle-line"></i>Como eliminar "leads frios" e aumentar taxa de conversão</li>
+                            <li><i class="ri-checkbox-circle-line"></i>Construção do processo de vendas que funciona no dia a dia</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-day">
-                    <div class="day-header">
-                        <h3 class="day-title">Dia 3 - 17/03</h3>
-                        <p class="day-subtitle">Implementação e Resultados</p>
+                </li>
+                <li class="timeline-item">
+                    <div class="bubble">5</div>
+                    <div class="timeline-content">
+                        <h4>Encerramento – Planejamento de Marketing e Vendas 2026</h4>
+                        <ul class="timeline-list">
+                            <li><i class="ri-checkbox-circle-line"></i>Checklist de metas, indicadores e ações práticas</li>
+                        </ul>
                     </div>
-                    <div class="schedule">
-                        <div class="schedule-item">
-                            <span class="schedule-time">09:00</span>
-                            <span class="schedule-event">Métricas e KPIs</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">11:00</span>
-                            <span class="schedule-event">Automação de Vendas</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">14:00</span>
-                            <span class="schedule-event">Encerramento e Networking</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ol>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="section section-gray">
+    <section class="section section-gray" id="beneficios">
         <div class="container">
-            <h2 class="section-title section-title-dark">Por Que Participar?</h2>
+            <h2 class="section-title section-title-dark has-underline">Por Que Participar?</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3 class="benefit-title">Networking</h3>
-                    <p class="benefit-text">Conecte-se com profissionais de vendas de todo o Brasil</p>
+                    <div class="benefit-icon"><i class="ri-time-line"></i></div>
+                    <h3 class="benefit-title">2025 Já Acabou</h3>
+                    <p class="benefit-text">Exclusivo! Acesso antecipado para empresários que querem sair na frente. Não espere mais para começar a agir.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="benefit-title">Estratégias Práticas</h3>
-                    <p class="benefit-text">Aprenda técnicas que você pode aplicar imediatamente</p>
+                    <div class="benefit-icon"><i class="ri-bar-chart-line"></i></div>
+                    <h3 class="benefit-title">Resultados Comprovados</h3>
+                    <p class="benefit-text">Aprenda com quem fez empresas crescerem de verdade, com estratégias, marketing e performance.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="benefit-title">Conteúdo Exclusivo</h3>
-                    <p class="benefit-text">Acesso a materiais e ferramentas exclusivas</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="benefit-title">Certificado</h3>
-                    <p class="benefit-text">Certificado de participação reconhecido no mercado</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Form Section -->
-    <section class="section" id="inscricao">
-        <div class="container">
-            <div class="form-wrapper">
-                <div class="form-header">
-                    <h2 class="form-title">Garanta Sua Vaga</h2>
-                    <p class="form-subtitle">Preencha o formulário abaixo e receba mais informações sobre o evento</p>
-                </div>
-                <form class="registration-form" id="registrationForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nome" class="form-label">Nome Completo *</label>
-                            <input type="text" id="nome" name="nome" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-mail *</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="telefone" class="form-label">Telefone *</label>
-                            <input type="tel" id="telefone" name="telefone" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="empresa" class="form-label">Empresa</label>
-                            <input type="text" id="empresa" name="empresa" class="form-input">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="cargo" class="form-label">Cargo</label>
-                        <input type="text" id="cargo" name="cargo" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label for="mensagem" class="form-label">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" class="form-textarea" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Enviar Inscrição</button>
-                </form>
-                <div class="form-success" id="formSuccess">
-                    <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                    <h3>Inscrição Enviada!</h3>
-                    <p>Obrigado por se inscrever. Em breve entraremos em contato.</p>
+                    <div class="benefit-icon"><i class="ri-team-line"></i></div>
+                    <h3 class="benefit-title">Networking Exclusivo</h3>
+                    <p class="benefit-text">Conecte-se com outros empresários de Uberlândia e região. Troque experiências e crie parcerias focadas em crescimento.</p>
                 </div>
             </div>
         </div>
@@ -299,22 +234,97 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Não Perca Esta Oportunidade!</h2>
-                <p class="cta-text">Vagas limitadas. Garanta sua participação no maior evento de vendas de 2026.</p>
-                <a href="#inscricao" class="btn btn-white">Inscreva-se Agora</a>
+                <div class="cta-badge">
+                    <i class="ri-star-fill"></i>
+                    ÚLTIMAS VAGAS DISPONÍVEIS
+                </div>
+                <h2 class="cta-title">Garanta Sua Vaga Agora!</h2>
+                <p class="cta-subtitle">Não perca a oportunidade de transformar suas vendas em 2026. Evento 100% gratuito com vagas limitadas.</p>
+                <a href="#inscricao" class="btn btn-white btn-lg">Quero Garantir Minha Vaga Gratuita <i class="ri-arrow-right-line"></i></a>
+                <p class="cta-info">⏰ Vagas limitadas • 📍 Av. Nicomedes Alves dos Santos, 3600 - Loja 2 - Morada da Colina, Uberlândia - MG • 📅 06 de Agosto</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="inscricao" class="section section-form">
+        <div class="container">
+            <div class="form-header">
+                <h2 class="form-title">Garanta Sua Vaga</h2>
+                <div class="title-underline"></div>
+                <p class="form-subtitle">Preencha o formulário abaixo e reserve seu lugar no evento mais importante de vendas de 2026</p>
+            </div>
+            <div class="form-wrapper">
+                <div id="formSuccess" class="form-success" style="display: none;">
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%;">
+                        <i class="ri-checkbox-circle-line icon-success"></i>
+                        <h3>Obrigado, recebemos sua inscrição!</h3>
+                        <p>Sua vaga está garantida.<br>Nos vemos no evento!</p>
+                    </div>
+                </div>
+                <form id="registrationForm" class="registration-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome Completo *</label>
+                        <input id="name" name="name" type="text" required class="form-input" placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail Corporativo *</label>
+                        <input id="email" name="email" type="email" required class="form-input" placeholder="seu@empresa.com">
+                        <p id="emailError" class="form-error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefone/WhatsApp *</label>
+                        <input id="phone" name="phone" type="tel" required class="form-input" placeholder="(00) 00000-0000">
+                        <p id="phoneError" class="form-error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company" class="form-label">Nome da Empresa *</label>
+                        <input id="company" name="company" type="text" required class="form-input" placeholder="Nome da sua empresa">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="instagram" class="form-label">Seu Instagram @</label>
+                        <input id="instagram" name="instagram" type="text" class="form-input" placeholder="@seuperfil">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="revenue" class="form-label">Fatura quanto: *</label>
+                        <select id="revenue" name="revenue" required class="form-input">
+                            <option value="">Selecione uma opção</option>
+                            <option value="Até R$50 mil/mês">Até R$50 mil/mês</option>
+                            <option value="De R$50 a R$100 mil/mês">De R$50 a R$100 mil/mês</option>
+                            <option value="De R$100 a R$200 mil/mês">De R$100 a R$200 mil/mês</option>
+                            <option value="Mais de R$200 mil/mês">Mais de R$200 mil/mês</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" id="submitButton">
+                        Confirmar Inscrição Gratuita
+                    </button>
+
+                    <p class="form-terms">
+                        Ao se inscrever, você concorda em receber comunicações sobre o evento.
+                    </p>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Marca%20Hawk%20-%20Azul-03-KFt26NWZF6LUtYwSYhcomPcRw2fq2E.png" alt="Hawk Logo" class="footer-logo">
-                <p class="footer-text">© 2026 Hawk. Todos os direitos reservados.</p>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <span class="footer-hawk">hawk</span>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-copyright">© 2026 Hawk Marketing. Todos os direitos reservados.</div>
+                    <div class="footer-event">Acelera Vendas 2026 – Evento Presencial Gratuito</div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <script src="script.js"></script>
 </body>

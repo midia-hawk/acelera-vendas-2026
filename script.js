@@ -1,117 +1,206 @@
-// Mobile Menu Toggle
-const menuToggle = document.getElementById("menuToggle")
-const nav = document.getElementById("nav")
+document.addEventListener('DOMContentLoaded', () => {
+    // Seletores do formulário
+    const registrationForm = document.getElementById('registrationForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const submitButton = document.getElementById('submitButton');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
 
-menuToggle.addEventListener("click", () => {
-  nav.classList.toggle("active")
-  menuToggle.classList.toggle("active")
-})
-
-// Close menu when clicking on a link
-const navLinks = document.querySelectorAll(".nav-link")
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("active")
-    menuToggle.classList.remove("active")
-  })
-})
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
-    if (target) {
-      const headerOffset = 80
-      const elementPosition = target.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      })
+    // Função de validação de e-mail corporativo
+    function validateEmail(email) {
+        const personalEmailDomains = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'uol.com.br', 'bol.com.br', 'live.com', 'icloud.com'];
+        const emailDomain = email.split('@')[1]?.toLowerCase();
+        if (personalEmailDomains.includes(emailDomain)) {
+            return 'Por favor, utilize um e-mail corporativo. E-mails pessoais não são permitidos.';
+        }
+        return '';
     }
-  })
-})
 
-// Header Scroll Effect
-const header = document.getElementById("header")
-let lastScroll = 0
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset
-
-  if (currentScroll > 100) {
-    header.classList.add("scrolled")
-  } else {
-    header.classList.remove("scrolled")
-  }
-
-  lastScroll = currentScroll
-})
-
-// Fade In Animation on Scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible")
+    // Função de validação de telefone
+    function validatePhone(phone) {
+        const phoneDigits = phone.replace(/\D/g, '');
+        if (phoneDigits.length < 10 || phoneDigits.length > 11) {
+            return 'Telefone inválido. Digite um número com DDD (10 ou 11 dígitos).';
+        }
+        return '';
     }
-  })
-}, observerOptions)
 
-// Add fade-in class to elements
-const fadeElements = document.querySelectorAll(".section, .speaker-card, .program-day, .benefit-card, .stat-card")
-fadeElements.forEach((el) => {
-  el.classList.add("fade-in")
-  observer.observe(el)
-})
+    // Função de máscara de telefone
+    function formatPhone(value) {
+        let digits = value.replace(/\D/g, '');
+        if (digits.length > 11) digits = digits.slice(0, 11);
+        if (digits.length > 10) {
+            return digits.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        } else if (digits.length > 6) {
+            return digits.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+        } else if (digits.length > 2) {
+            return digits.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+        } else {
+            return digits.replace(/(\d*)/, '($1');
+        }
+    }
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
 
-// Form Submission
-const registrationForm = document.getElementById("registrationForm")
-const formSuccess = document.getElementById("formSuccess")
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
 
-registrationForm.addEventListener("submit", (e) => {
-  e.preventDefault()
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    }
 
-  // Get form data
-  const formData = new FormData(registrationForm)
-  const data = Object.fromEntries(formData)
 
-  // Log form data (in production, send to server)
-  console.log("Form submitted:", data)
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerOffset = 80; // Ajuste conforme altura do header
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 
-  // Hide form and show success message
-  registrationForm.style.display = "none"
-  formSuccess.classList.add("show")
+    // Header Scroll Effect (navbar branca ao descer)
+    const header = document.getElementById('header');
+    const logo = document.querySelector('.logo');
+    function updateHeaderScroll() {
+        if (window.pageYOffset > 100) {
+            header.classList.add('scrolled');
+            header.classList.remove('transparent');
+            if (logo) logo.style.filter = '';
+        } else {
+            header.classList.remove('scrolled');
+            header.classList.add('transparent');
+            if (logo) logo.style.filter = 'brightness(0) invert(1)';
+        }
+    }
+    if (header) {
+        window.addEventListener('scroll', updateHeaderScroll);
+        updateHeaderScroll();
+    }
 
-  // Reset form after 5 seconds
-  setTimeout(() => {
-    registrationForm.reset()
-    registrationForm.style.display = "block"
-    formSuccess.classList.remove("show")
-  }, 5000)
-})
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            e.target.value = formatPhone(e.target.value);
+            if (phoneError) phoneError.textContent = '';
+            e.target.classList.remove('error');
+        });
+    }
 
-// Phone mask
-const telefoneInput = document.getElementById("telefone")
-telefoneInput.addEventListener("input", (e) => {
-  let value = e.target.value.replace(/\D/g, "")
-  if (value.length > 11) value = value.slice(0, 11)
+    if (emailInput) {
+        emailInput.addEventListener('input', (e) => {
+            if (emailError) emailError.textContent = '';
+            e.target.classList.remove('error');
+        });
+    }
 
-  if (value.length > 10) {
-    value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3")
-  } else if (value.length > 6) {
-    value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3")
-  } else if (value.length > 2) {
-    value = value.replace(/(\d{2})(\d{0,5})/, "($1) $2")
-  } else {
-    value = value.replace(/(\d*)/, "($1")
-  }
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-  e.target.value = value
-})
+            let hasError = false;
+
+            const emailValidationMsg = validateEmail(emailInput.value);
+            if (emailValidationMsg) {
+                if (emailError) emailError.textContent = emailValidationMsg;
+                emailInput.classList.add('error');
+                hasError = true;
+            } else {
+                if (emailError) emailError.textContent = '';
+                emailInput.classList.remove('error');
+            }
+
+            const phoneValidationMsg = validatePhone(phoneInput.value);
+            if (phoneValidationMsg) {
+                if (phoneError) phoneError.textContent = phoneValidationMsg;
+                phoneInput.classList.add('error');
+                hasError = true;
+            } else {
+                if (phoneError) phoneError.textContent = '';
+                phoneInput.classList.remove('error');
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            if (submitButton) submitButton.disabled = true;
+            submitButton.textContent = 'Processando...';
+
+            const formData = new FormData(registrationForm);
+            const data = Object.fromEntries(formData);
+
+            // Capture UTM parameters from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmParams = {
+                utm_source: urlParams.get('utm_source') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_campaign: urlParams.get('utm_campaign') || '',
+                utm_term: urlParams.get('utm_term') || '',
+                utm_content: urlParams.get('utm_content') || '',
+            };
+
+            const payload = {
+                ...data,
+                ...utmParams
+            };
+
+            try {
+                const res = await fetch("https://n8n-n8n-start.t4r0vc.easypanel.host/webhook/4212093e-b3f1-467b-8604-9ebfe17d7167", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                if (!res.ok) {
+                    throw new Error(`Webhook responded with ${res.status}`);
+                }
+
+
+                if (registrationForm) registrationForm.style.display = 'none';
+                if (formSuccess) formSuccess.style.display = 'flex';
+
+            } catch (err) {
+                console.error("Error submitting form:", err);
+                alert("Ocorreu um erro ao enviar o formulário. Por favor, tente novamente mais tarde.");
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Confirmar Inscrição Gratuita';
+                }
+            }
+        });
+    }
+
+    // Scroll to form functionality for CTA button
+    const ctaButton = document.querySelector('.cta-section .btn-lg');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const element = document.getElementById('inscricao');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
