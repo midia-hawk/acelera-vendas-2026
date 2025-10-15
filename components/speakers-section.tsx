@@ -15,8 +15,7 @@ export function SpeakersSection() {
       description:
         "Vai revelar como construir um funil previsível, medir os indicadores certos e gerar mais vendas com menos desperdício de leads.",
       icon: Target,
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Retratos%20Rhulian%20%20%2816%29-fygdbY11LINC7GLrZbux7bsBTzGXiM.jpg",
+      image: "/images/speaker-rhulian.jpg",
       color: "text-primary",
     },
     {
@@ -26,8 +25,7 @@ export function SpeakersSection() {
       description:
         "Vai mostrar como o empresário pode se posicionar como influenciador do próprio negócio, fortalecendo marca, autoridade e conexão com o público.",
       icon: Lightbulb,
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_o9o2x7o9o2x7o9o2-Q6fFSyWVoZNy5NRcduQwrK8gv6EtDh.png",
+      image: "/images/speaker-mariana.png",
       color: "text-primary",
     },
   ]
@@ -60,7 +58,8 @@ export function SpeakersSection() {
                 <img
                   src={speaker.image || "/placeholder.svg"}
                   alt={speaker.name}
-                  className="w-full h-64 object-cover object-[50%_20%] rounded-xl"
+                  className="w-full max-w-md mx-auto rounded-xl"
+                  loading="lazy"
                 />
               </div>
 
