@@ -1,5 +1,7 @@
 "use client"
 
+const basePath = process.env.NODE_ENV === 'production' ? '/acelera-vendas-2026' : '';
+
 import { Card } from "@/components/ui/card"
 import { Lightbulb, Target } from "lucide-react"
 import { useInView } from "@/hooks/use-in-view"
@@ -15,7 +17,7 @@ export function SpeakersSection() {
       description:
         "Vai revelar como construir um funil previsível, medir os indicadores certos e gerar mais vendas com menos desperdício de leads.",
       icon: Target,
-      image: "/images/speaker-rhulian.jpg",
+  image: `${basePath}/images/speaker-rhulian.jpg`,
       color: "text-primary",
     },
     {
@@ -25,7 +27,7 @@ export function SpeakersSection() {
       description:
         "Vai mostrar como o empresário pode se posicionar como influenciador do próprio negócio, fortalecendo marca, autoridade e conexão com o público.",
       icon: Lightbulb,
-      image: "/images/speaker-mariana.png",
+  image: `${basePath}/images/speaker-mariana.png`,
       color: "text-primary",
     },
   ]
