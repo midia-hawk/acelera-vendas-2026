@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailError = document.getElementById('emailError');
     const phoneError = document.getElementById('phoneError');
 
-    // Função de validação de e-mail corporativo
+    // Função de validação de e-mail
     function validateEmail(email) {
-        const personalEmailDomains = ['gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'uol.com.br', 'bol.com.br', 'live.com', 'icloud.com'];
-        const emailDomain = email.split('@')[1]?.toLowerCase();
-        if (personalEmailDomains.includes(emailDomain)) {
-            return 'Por favor, utilize um e-mail corporativo. E-mails pessoais não são permitidos.';
+        // Apenas verifica se é um email válido (formato básico)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return 'Por favor, digite um e-mail válido.';
         }
         return '';
     }

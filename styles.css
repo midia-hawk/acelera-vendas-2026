@@ -891,6 +891,29 @@ body {
   font-size: 24px;
 }
 
+/* Loading Spinner */
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #0047ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* CTA Section */
 .cta-section {
   background: radial-gradient(1200px 600px at 50% -200px, rgba(255,255,255,0.15), transparent 60%),
