@@ -143,9 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            if (submitButton) submitButton.disabled = true;
-            submitButton.textContent = 'Processando...';
-
+            // Coleta os dados do formulário
             const formData = new FormData(registrationForm);
             const data = Object.fromEntries(formData);
 
@@ -164,51 +162,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 ...utmParams
             };
 
-            try {
-                // Adiciona timeout de 15 segundos
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 15000);
+            // Mostra a tela de obrigado IMEDIATAMENTE
+            if (registrationForm) registrationForm.style.display = 'none';
+            if (formSuccess) formSuccess.style.display = 'flex';
 
-                const res = await fetch("https://n8n-n8n-start.t4r0vc.easypanel.host/webhook/4212093e-b3f1-467b-8604-9ebfe17d7167", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(payload),
-                    signal: controller.signal
-                });
-
-                clearTimeout(timeoutId);
-
-                // Verifica se a resposta foi bem-sucedida
-                if (!res.ok) {
-                    throw new Error(`Webhook responded with ${res.status}`);
+            // Envia para o webhook em background (sem bloquear a UI)
+            fetch("https://n8n-n8n-start.t4r0vc.easypanel.host/webhook/4212093e-b3f1-467b-8604-9ebfe17d7167", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+            .then(res => {
+                if (res.ok) {
+                    console.log('Form data sent to webhook successfully');
+                } else {
+                    console.warn('Webhook returned non-OK status:', res.status);
                 }
-
-                // Apenas mostra sucesso se o webhook respondeu OK
-                if (registrationForm) registrationForm.style.display = 'none';
-                if (formSuccess) formSuccess.style.display = 'flex';
-
-                // Log de sucesso para debug
-                console.log('Form submitted successfully', res.status);
-
-            } catch (err) {
-                console.error("Error submitting form:", err);
-                
-                // Em qualquer erro, mostra mensagem e reabilita o botão
-                let errorMessage = "Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.";
-                
-                if (err.name === 'AbortError') {
-                    errorMessage = "O envio demorou muito tempo. Por favor, tente novamente.";
-                }
-                
-                alert(errorMessage);
-                
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Confirmar Inscrição Gratuita';
-                }
-            }
+            })
+            .catch(err => {
+                // Apenas loga o erro, não interfere na experiência do usuário
+                console.error('Error sending to webhook (background):', err);
+            });
         });
     }
 
