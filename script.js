@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formSuccess) formSuccess.style.display = 'flex';
 
             // Envia para o webhook em background (sem bloquear a UI)
-            fetch("https://n8n-n8n-start.t4r0vc.easypanel.host/webhook/4212093e-b3f1-467b-8604-9ebfe17d7167", {
+            fetch("https://hook.eu2.make.com/x2xta6by9qta9xcp7tbjsybf1nt33g3g", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
