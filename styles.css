@@ -1121,4 +1121,30 @@ body {
     grid-template-columns: 1fr !important;
   }
 
+  /* Form wrapper mobile */
+  .form-wrapper {
+    padding: 24px 16px;
+  }
+
+  /* Success screen mobile */
+  .form-success {
+    padding: 24px 16px !important;
+  }
+
+  .form-success h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .form-success p {
+    font-size: 0.9rem !important;
+  }
+
+  .btn-whatsapp {
+    padding: 14px 24px !important;
+    font-size: 1rem !important;
+    max-width: 100% !important;
+  }
+
   /* Removidas regras inválidas e duplicadas do final do arquivo para corrigir sintaxe */
+
+}
